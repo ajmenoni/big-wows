@@ -54,6 +54,7 @@ input {
 }
 
 button {
+  min-width: 125px;
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
@@ -79,13 +80,13 @@ button:focus-visible {
 
 .dont-tap-the-class {
   width: 250px;
-  max-height: 300px; /* max height */
+  max-height: 300px;
   margin: 20px auto;
-  border-radius: 20px; /* rounded rectangle */
+  border-radius: 20px;
   border: 2px solid #555;
   background-color: #1e40af;
   color: white;
-  overflow-y: auto; /* show scroll if too many names */
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -114,7 +115,7 @@ button:focus-visible {
   background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* start near top */
+  align-items: flex-start;
   padding-top: 5vh;
   z-index: 999;
 }
@@ -152,22 +153,6 @@ button:focus-visible {
   font-weight: bold;
   margin-bottom: 1.5rem;
   color: #1a1a1a;
-}
-
-.modal button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  color: white;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-.modal button:hover {
-  border-color: #646cff;
 }
 
 .spud {
