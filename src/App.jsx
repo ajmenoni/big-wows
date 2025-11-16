@@ -130,7 +130,11 @@ function App() {
       )}
 
       {risingFistOfFury && (
-        <img src="/upfist.png" alt="Fury Fist" className="rise-up" />
+        <img
+          src={`${import.meta.env.BASE_URL}upfist.png`}
+          alt="Fury Fist"
+          className="rise-up"
+        />
       )}
     </>
   );
