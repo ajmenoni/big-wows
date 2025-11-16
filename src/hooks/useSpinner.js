@@ -1,7 +1,11 @@
 import { useState, useRef } from "react";
 
 export function useSpinner() {
-  const spudArray = ["/potato.png", "/potatoBolt.png", "/potatoskin.png"];
+  const spudArray = [
+    `${import.meta.env.BASE_URL}potato.png`,
+    `${import.meta.env.BASE_URL}potatoBolt.png`,
+    `${import.meta.env.BASE_URL}potatoskin.png`,
+  ];
   const [sparkleIndex, setSparkleIndex] = useState(null);
   const [bigWow, setBigWow] = useState(null);
   const [spud, setSpud] = useState(spudArray[0]);
