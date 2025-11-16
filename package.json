@@ -9,10 +9,10 @@
     "clean-docs": "rmdir /S /Q docs",
     "copy-docs": "xcopy dist\\* docs /E /I /Y",
     "build:docs": "npm run build && npm run clean-docs && npm run copy-docs",
+    "predeploy": "npm run build:docs",
+    "deploy": "gh-pages -d docs",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "preview": "vite preview"
   },
   "dependencies": {
     "react": "^19.2.0",
@@ -27,6 +27,7 @@
     "eslint": "^9.39.1",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
+    "gh-pages": "^6.3.0",
     "globals": "^16.5.0",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.17",
