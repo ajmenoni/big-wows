@@ -22,6 +22,7 @@ function App() {
     setSparkleIndex,
     spud,
     fryThatSucker,
+    risingFistOfFury,
   } = useSpinner();
 
   const handleSubmit = (e) => {
@@ -83,7 +84,9 @@ function App() {
 
   return (
     <>
-      <h1>BigWows</h1>
+      <h1>
+        Big<span className="wows">Wows</span>
+      </h1>
 
       <div className="container">
         <BigSpud setSpud={spud} shaking={fryThatSucker} />
@@ -124,6 +127,10 @@ function App() {
           bigWow={names[names.length - 1]}
           lastPotatoIndex={names.length - 1}
         />
+      )}
+
+      {risingFistOfFury && (
+        <img src="/upfist.png" alt="Fury Fist" className="rise-up" />
       )}
     </>
   );

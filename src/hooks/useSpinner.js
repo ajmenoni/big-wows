@@ -6,6 +6,7 @@ export function useSpinner() {
   const [bigWow, setBigWow] = useState(null);
   const [spud, setSpud] = useState(spudArray[0]);
   const [fryThatSucker, setFryThatSucker] = useState(false);
+  const [risingFistOfFury, setRisingFistOfFury] = useState(false);
   const intervalRef = useRef(null);
 
   const spin = (names) => {
@@ -39,9 +40,15 @@ export function useSpinner() {
         clearInterval(intervalRef.current);
         const selectedIndex = Math.floor(Math.random() * names.length);
         setSparkleIndex(selectedIndex);
-        setBigWow(names[selectedIndex]);
-        setSpud(spudArray[0]);
-        setFryThatSucker(false);
+
+        setRisingFistOfFury(true);
+
+        setTimeout(() => {
+          setBigWow(names[selectedIndex]);
+          setSpud(spudArray[0]);
+          setFryThatSucker(false);
+          setRisingFistOfFury(false);
+        }, 700);
       }
     }, intervalTime);
   };
@@ -54,5 +61,6 @@ export function useSpinner() {
     setSparkleIndex,
     spud,
     fryThatSucker,
+    risingFistOfFury,
   };
 }

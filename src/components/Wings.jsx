@@ -7,8 +7,7 @@ export default function Wings({ spin, names, clearTheWheel }) {
     setTimeout(() => setMood("🤢"), 1000);
     setTimeout(() => setMood("🤮"), 2000);
     setTimeout(() => setMood("😐"), 3000);
-    setTimeout(() => setMood("🫨"), 4000);
-    setTimeout(() => clearTheWheel(), 5000);
+    setTimeout(() => clearTheWheel(), 4000);
   }
 
   return (
