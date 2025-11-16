@@ -6,8 +6,13 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "clean-docs": "rmdir /S /Q docs",
+    "copy-docs": "xcopy dist\\* docs /E /I /Y",
+    "build:docs": "npm run build && npm run clean-docs && npm run copy-docs",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "react": "^19.2.0",
