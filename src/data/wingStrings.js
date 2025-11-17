@@ -40,4 +40,7 @@ export const wingString = [
   "take it or leave it",
   "whatever, it’s",
   "crowned",
+  "mmmm, what'chya say",
+  "big wow",
+  "hold up",
 ];
