@@ -143,6 +143,22 @@ button:focus-visible {
   z-index: 999;
 }
 
+.modal {
+  background: #1a001a;
+  padding: 2rem;
+  width: 75vw;
+  max-width: 600px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 0 20px #ff00ff, 0 0 40px #00ffff, 0 0 60px #ffcc00;
+
+  animation: make-my-monster-grow 0.3s ease-out forwards;
+}
+
+.modal.banishing {
+  animation: begone-foul-beast 0.25s ease-in forwards;
+}
+
 @keyframes make-my-monster-grow {
   0% {
     transform: translateY(100px);
@@ -154,16 +170,15 @@ button:focus-visible {
   }
 }
 
-.modal {
-  background: #1a001a;
-  padding: 2rem;
-  width: 75vw;
-  max-width: 600px;
-  border-radius: 16px;
-  text-align: center;
-  box-shadow: 0 0 20px #ff00ff, 0 0 40px #00ffff, 0 0 60px #ffcc00;
-
-  animation: make-my-monster-grow 0.3s ease-out forwards;
+@keyframes begone-foul-beast {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
 }
 
 .modal h2 {

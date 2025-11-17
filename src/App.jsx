@@ -50,7 +50,10 @@ function App() {
   };
 
   const closeModal = (id) => {
-    setBigWow(null);
+    setTimeout(() => {
+      setBigWow(null), 250;
+    });
+
     handleSparkleRemoval(id);
   };
 

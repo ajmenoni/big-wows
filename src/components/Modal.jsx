@@ -1,6 +1,8 @@
+import { useRef } from "react";
 import { wingString } from "../data/wingStrings";
 import { buttonStrings } from "../data/buttonStrings";
 import { cookThatTater } from "../data/cookThatTater";
+import { useMemo } from "react";
 
 export default function Modal({
   closeModal,
@@ -8,30 +10,46 @@ export default function Modal({
   removePotato,
   sparkleIndex,
 }) {
-  return (
-    <div
-      className="modal-overlay"
-      onClick={() => {
+  const modalRef = useRef();
+  const wingMsg = useMemo(() => wingString[rando(wingString)], []);
+  const closeString = useMemo(() => buttonStrings[rando(buttonStrings)], []);
+  const cookEm = useMemo(() => cookThatTater[rando(cookThatTater)], []);
+
+  function animateClose(sparkleIndex) {
+    const element = modalRef.current;
+    if (!element) return;
+
+    element.classList.add("banishing");
+
+    element.addEventListener(
+      "animationend",
+      () => {
         closeModal(sparkleIndex);
-      }}
-    >
-      <div className="modal">
-        <h2>{wingString[rando(wingString)]}</h2>
+      },
+      { once: true }
+    );
+  }
+
+  return (
+    <div className="modal-overlay">
+      <div className="modal" ref={modalRef}>
+        <h2>{wingMsg}</h2>
         <p className="bigWow-name">{bigWow}</p>
         <div className="modal-butts">
           <button
             onClick={() => {
-              closeModal(sparkleIndex);
+              animateClose(sparkleIndex);
             }}
           >
-            {buttonStrings[rando(buttonStrings)]}
+            {closeString}
           </button>
           <button
             onClick={() => {
               removePotato(sparkleIndex);
+              animateClose();
             }}
           >
-            {cookThatTater[rando(cookThatTater)]}
+            {cookEm}
           </button>
         </div>
       </div>
