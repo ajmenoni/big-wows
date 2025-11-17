@@ -20,8 +20,8 @@ export function useSpinner() {
     let spudIndex = 0;
     let frameCount = 0;
     const spudFrameDelay = 3;
-    const duration = 1700;
-    const intervalTime = 70;
+    const duration = 1500;
+    const intervalTime = 65;
     const startTime = Date.now();
 
     clearInterval(intervalRef.current);
@@ -44,13 +44,12 @@ export function useSpinner() {
         clearInterval(intervalRef.current);
         const selectedIndex = Math.floor(Math.random() * names.length);
         setSparkleIndex(selectedIndex);
-
-        setFryThatSucker(false);
+        setSpud(spudArray[0]);
         setRisingFistOfFury(true);
 
         setTimeout(() => {
           setBigWow(names[selectedIndex]);
-          setSpud(spudArray[0]);
+          setFryThatSucker(false);
           setRisingFistOfFury(false);
         }, 700);
       }
