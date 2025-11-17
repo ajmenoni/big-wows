@@ -45,12 +45,12 @@ export function useSpinner() {
         const selectedIndex = Math.floor(Math.random() * names.length);
         setSparkleIndex(selectedIndex);
 
+        setFryThatSucker(false);
         setRisingFistOfFury(true);
 
         setTimeout(() => {
           setBigWow(names[selectedIndex]);
           setSpud(spudArray[0]);
-          setFryThatSucker(false);
           setRisingFistOfFury(false);
         }, 700);
       }
